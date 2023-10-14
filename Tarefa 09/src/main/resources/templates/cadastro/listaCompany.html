@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Companys</title>
+    <link rel="stylesheet" type="text/css" href="css/style.lista.css">
+</head>
+<body>
+    <h1>Lista de Companys</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Usuário</th>
+                <th>Data</th>
+                <th>Horário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="company : ${companys}">
+                <td th:text="${company.id}"></td>
+                <td th:text="${company.nome}"></td>
+                <td th:text="${company.usuario}"></td>
+                <td th:text="${company.data}"></td>
+                <td th:text="${company.horario}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<style>
+	body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+</style>
+</html>
+
+
